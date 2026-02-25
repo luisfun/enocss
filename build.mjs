@@ -1,16 +1,18 @@
-import { readFile, mkdir, writeFile, readdir } from 'node:fs/promises';
-import { existsSync, rmSync } from 'node:fs';
+import { readFile, mkdir, writeFile, readdir, rm } from 'node:fs/promises';
 import path from 'path';
 import postcss from 'postcss';
 import atImport from 'postcss-import';
 import autoprefixer from 'autoprefixer';
 import cssnano from 'cssnano';
 
-function cleanDist() {
+async function cleanDist() {
   const distPath = path.join(process.cwd(), 'dist');
-  if (existsSync(distPath)) {
-    rmSync(distPath, { recursive: true, force: true });
+  try {
+    await rm(distPath, { recursive: true, force: true });
     console.log('cleaned:', distPath);
+  } catch (err) {
+    console.error('Failed to clean dist:', err);
+    throw err;
   }
 }
 
@@ -59,7 +61,7 @@ async function build() {
 }
 
 try {
-  cleanDist();
+  await cleanDist();
   await build();
 } catch (err) {
   console.error(err);
