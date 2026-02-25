@@ -13,7 +13,7 @@
   ],
   "scripts": {
     "dev": "cd playground && vite",
-    "build": "postcss src/**/*.css -d dist/"
+    "build": "node build.mjs"
   },
   "devDependencies": {
     "autoprefixer": "^10.4.24",

@@ -8,4 +8,7 @@
   --e-phi-inv: 0.618;
   --e-phi-inv-2: 0.382;
   /* --e-phi-inv-3: 0.236; */
+  &:has(.e-root) {
+    font-size: 100%;
+  }
 }

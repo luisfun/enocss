@@ -1,0 +1,7 @@
+.e-theme {
+  --e-theme-text: #111;
+  --e-theme-bg: #fff;
+  --e-theme-border: rgba(0, 0, 0, 0.08);
+  color: var(--e-theme-text);
+  background: var(--e-theme-bg);
+}
