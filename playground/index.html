@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="ja">
+<head>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width,initial-scale=1" />
+	<title>enocss — Button preview</title>
+  <script type="module">
+    import '../src/components/base.css';
+    import '../src/components/button.css';
+  </script>
+	<style>
+		:root{
+			--e-theme-text: #fff;
+			--e-theme-bg: #111;
+			--e-theme-border: rgba(0,0,0,0.08);
+      color: var(--e-theme-text);
+      background: var(--e-theme-bg);
+		}
+		body{font-family:system-ui,-apple-system,Segoe UI,Roboto,"Helvetica Neue",Arial;margin:2rem;background:#eee;color:#222}
+		.wrap{display:flex;flex-direction:column;gap:1rem;max-width:820px}
+		.row{display:flex;gap:1rem;flex-wrap:wrap}
+		.panel{padding:1rem;border-radius:10px;background:#fff;border:1px solid rgba(0,0,0,0.03)}
+		h1{font-size:1.25rem;margin:0 0 .5rem}
+	</style>
+</head>
+<body>
+	<div class="wrap">
+		<div class="panel">
+			<h1>Button コンポーネント確認</h1>
+			<p>このページは `src/components/button.css` の見た目確認用です。</p>
+		</div>
+
+		<div class="panel row">
+			<button>Default</button>
+			<button class="e-button"><span class="e-icon">🔍</span><span>Search</span></button>
+			<button class="e-button"><span>Next</span><span class="e-icon">➜</span></button>
+			<button class="e-button" style="--e-size:.75rem">Small</button>
+			<button class="e-button" style="--e-size:1.25rem">Large</button>
+		</div>
+
+		<div class="panel">
+			<h2 style="margin-top:0">アイコンだけのボタン</h2>
+			<div class="row">
+				<button class="e-button"><span class="e-icon">⭐</span></button>
+				<button class="e-button"><span class="e-icon">❤</span></button>
+			</div>
+		</div>
+
+		<div class="panel">
+			<h2 style="margin-top:0">ダークテーマの例</h2>
+			<div class="row" style="padding:1rem;background:#111;border-radius:8px">
+				<button class="e-button" style="--e-theme-bg:#222;--e-theme-text:#fff;--e-theme-border:rgba(255,255,255,0.06)">Dark</button>
+				<button class="e-button" style="--e-theme-bg:#333;--e-theme-text:#fff;--e-theme-border:rgba(255,255,255,0.06)"><span class="e-icon">⚙️</span><span>Settings</span></button>
+			</div>
+		</div>
+
+		<div class="panel">
+			<h2 style="margin-top:0">確認ポイント</h2>
+			<ul>
+				<li>アイコンの左右パディングが期待通りか</li>
+				<li>サイズ変数 `--e-size` で文字・アイコンが拡大縮小するか</li>
+				<li>テーマ変数(`--e-theme-*`)で背景／文字色／境界線が変わるか</li>
+			</ul>
+		</div>
+	</div>
+</body>
+</html>
