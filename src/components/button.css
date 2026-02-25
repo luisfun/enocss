@@ -7,7 +7,7 @@
   align-items: center;
   vertical-align: middle;
   gap: var(--e-button-pad-x-icon); /* different from liftkit */
-  border: 1px solid rgba(0, 0, 0, 0);
+  border: 0px solid var(--e-theme-border, transparent);
   border-radius: 99em;
   padding: var(--e-button-pad-y) 1em;
   position: relative;
@@ -20,7 +20,6 @@
   line-height: var(--e-button-line-height);
   color: var(--e-theme-text);
   background: var(--e-theme-bg);
-  border-color: var(--e-theme-border);
   & > .e-icon {
     display: inline-flex;
     align-items: center;

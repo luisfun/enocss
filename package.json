@@ -12,8 +12,9 @@
     "dist"
   ],
   "scripts": {
-    "dev": "cd playground && vite",
-    "build": "node build.mjs"
+    "dev": "vite",
+    "build": "node build.mjs",
+    "preview": "npm run build && vite build && vite preview"
   },
   "devDependencies": {
     "autoprefixer": "^10.4.24",

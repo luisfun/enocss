@@ -1,6 +1,5 @@
 :root {
-  --e-scale: 1;
-  --e-size: calc(var(--e-scale) * 1rem);
+  --e-size: 1rem;
   /* --e-phi-3: 4.236; */
   /* --e-phi-2: 2.618; */
   /* --e-phi: 1.618; */
