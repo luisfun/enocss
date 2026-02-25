@@ -1,13 +1,33 @@
-import fg from 'fast-glob';
-import { readFile, mkdir, writeFile } from 'fs/promises';
+import { readFile, mkdir, writeFile, readdir } from 'node:fs/promises';
 import path from 'path';
 import postcss from 'postcss';
 import atImport from 'postcss-import';
 import autoprefixer from 'autoprefixer';
 import cssnano from 'cssnano';
 
+async function collectCssFiles(dir) {
+  const entries = await readdir(dir, { withFileTypes: true });
+  const files = [];
+  for (const entry of entries) {
+    const res = path.join(dir, entry.name);
+    if (entry.isDirectory()) {
+      files.push(...await collectCssFiles(res));
+    } else if (entry.isFile() && res.endsWith('.css')) {
+      files.push(res);
+    }
+  }
+  return files;
+}
+
 async function build() {
-  const files = await fg('src/**/*.css');
+  let files = [];
+  try {
+    files = await collectCssFiles('src');
+  } catch (err) {
+    console.error('Failed to read src/:', err);
+    return;
+  }
+
   if (!files || files.length === 0) {
     console.log('No CSS files found in src/');
     return;
