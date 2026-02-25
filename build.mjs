@@ -1,9 +1,18 @@
 import { readFile, mkdir, writeFile, readdir } from 'node:fs/promises';
+import { existsSync, rmSync } from 'node:fs';
 import path from 'path';
 import postcss from 'postcss';
 import atImport from 'postcss-import';
 import autoprefixer from 'autoprefixer';
 import cssnano from 'cssnano';
+
+function cleanDist() {
+  const distPath = path.join(process.cwd(), 'dist');
+  if (existsSync(distPath)) {
+    rmSync(distPath, { recursive: true, force: true });
+    console.log('cleaned:', distPath);
+  }
+}
 
 async function collectCssFiles(dir) {
   const entries = await readdir(dir, { withFileTypes: true });
@@ -50,6 +59,7 @@ async function build() {
 }
 
 try {
+  cleanDist();
   await build();
 } catch (err) {
   console.error(err);
