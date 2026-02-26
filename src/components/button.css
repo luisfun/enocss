@@ -6,7 +6,6 @@
     --e-button-h: var(--e-component-h-1\.5);
   }
   .e-button, .e-button-small {
-    --e-button-icon-h: calc(var(--e-phi-\.5) * 1em);
     --e-button-gap: calc(var(--e-button-icon-px) / var(--e-phi-1));
     --e-button-icon-px: calc((var(--e-button-h) - 1em) / 2);
     cursor: pointer;
@@ -32,11 +31,13 @@
     border: var(--e-button-border, 0px);
     /**/
     & > .e-button-icon {
-      display: inline-flex;
+      --e-button-icon-size: calc(var(--e-size) * var(--e-phi-\.5));
+      display: flex;
       align-items: center;
       justify-content: center;
-      height: var(--e-button-icon-h);
-      aspect-ratio: 1;
+      width: var(--e-button-icon-size);
+      height: var(--e-button-icon-size);
+      font-size: var(--e-button-icon-size);
     }
     &:has(.e-button-icon:first-child) {
       padding-left: var(--e-button-icon-px);
