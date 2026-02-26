@@ -1,0 +1,46 @@
+@layer eno {
+  .e-button-eno {
+    --e-button-h: var(--e-component-h-2);
+    --e-button-px: calc(var(--e-phi-half) * 1em);
+    --e-button-icon-h: calc(var(--e-phi-half) * 1em);
+    --e-button-gap: calc((var(--e-button-h) - var(--e-button-icon-h)) / var(--e-phi-half) / 2);
+    --e-button-icon-mx: calc(var(--e-button-gap) * var(--e-phi));
+    cursor: pointer;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    vertical-align: middle;
+    height: var(--e-button-h);
+    padding: 0 var(--e-button-px);
+    gap: var(--e-button-gap);
+    border-radius: 99em;
+    position: relative;
+    text-decoration: none;
+    white-space: pre;
+    word-break: keep-all;
+    overflow: hidden;
+    font-weight: 500;
+    line-height: 1;
+    font-size: var(--e-size);
+    color: var(--e-button-color);
+    background: var(--e-button-background);
+    border: var(--e-button-border, 0px);
+    & > .e-button-icon {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      height: var(--e-button-icon-h);
+      aspect-ratio: 1;
+    }
+    &:has(.e-button-icon:first-child) {
+      padding-left: var(--e-button-icon-mx);
+    }
+    &:has(.e-button-icon:last-child) {
+      padding-right: var(--e-button-icon-mx);
+    }
+  }
+  .e-button-small {
+    --e-button-h: var(--e-component-h-1\.5);
+    --e-button-px: 1em;
+  }
+}

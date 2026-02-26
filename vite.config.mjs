@@ -6,4 +6,7 @@ export default defineConfig({
     outDir: '../playground-preview',
     emptyOutDir: true,
   },
+  preview: {
+    port: 5173,
+  },
 })

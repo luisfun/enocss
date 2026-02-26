@@ -54,8 +54,7 @@ async function build() {
     ]).process(src, { from: file, to: outPath });
 
     await mkdir(path.dirname(outPath), { recursive: true });
-    const wrappedCss = `@layer eno{${result.css}}`;
-    await writeFile(outPath, wrappedCss, 'utf8');
+    await writeFile(outPath, result.css, 'utf8');
     console.log('written:', outPath);
   }));
 }

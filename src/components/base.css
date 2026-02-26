@@ -1,13 +1,17 @@
-:root {
-  --e-size: 1rem;
-  /* --e-phi-3: 4.236; */
-  /* --e-phi-2: 2.618; */
-  /* --e-phi: 1.618; */
-  --e-phi-half: 1.272;
-  --e-phi-inv: 0.618;
-  --e-phi-inv-2: 0.382;
-  /* --e-phi-inv-3: 0.236; */
-  &:has(.e-root) {
-    font-size: 100%;
+@layer eno {
+  :root {
+    --e-size: 1rem;
+    /* --e-phi-3: 4.236; */
+    --e-phi-2: 2.618;
+    --e-phi: 1.618;
+    --e-phi-half: 1.272;
+    --e-phi-inv: 0.618;
+    --e-phi-inv-2: 0.382;
+    /* --e-phi-inv-3: 0.236; */
+    --e-component-h-1\.5: round(nearest, calc(2.058 * 1em), 2px);
+    --e-component-h-2: round(nearest, calc(2.618 * 1em), 2px);
+    &:has(.e-root) {
+      font-size: 100%;
+    }
   }
 }
