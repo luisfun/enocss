@@ -1,38 +1,48 @@
 @layer eno {
   .e-button {
-    --e-button-pad-x-icon: calc(var(--e-phi-inv) * 1em);
-    --e-button-pad-y: calc(var(--e-phi-inv-2) * var(--e-phi-half) * 1em);
-    --e-button-line-height: calc(var(--e-phi-half) * 1em);
+    --e-button-h: var(--e-component-h-2);
+  }
+  .e-button-small {
+    --e-button-h: var(--e-component-h-1\.5);
+  }
+  .e-button, .e-button-small {
+    --e-button-icon-h: calc(var(--e-phi-\.5) * 1em);
+    --e-button-gap: calc(var(--e-button-icon-px) / var(--e-phi-1));
+    --e-button-icon-px: calc((var(--e-button-h) - 1em) / 2);
     cursor: pointer;
     display: inline-flex;
     align-items: center;
+    justify-content: center;
     vertical-align: middle;
-    gap: var(--e-button-pad-x-icon); /* different from liftkit */
-    border: 0px solid var(--e-theme-border, transparent);
+    height: var(--e-button-h);
+    padding: 0 calc(var(--e-button-h) / var(--e-phi-1\.5));
+    gap: var(--e-button-gap);
     border-radius: 99em;
-    padding: var(--e-button-pad-y) 1em;
     position: relative;
     text-decoration: none;
     white-space: pre;
     word-break: keep-all;
     overflow: hidden;
     font-weight: 500;
+    line-height: 1;
+    /* Settings */
     font-size: var(--e-size);
-    line-height: var(--e-button-line-height);
-    color: var(--e-theme-text);
-    background: var(--e-theme-bg);
-    & > .e-icon {
+    color: var(--e-button-color);
+    background: var(--e-button-background);
+    border: var(--e-button-border, 0px);
+    /**/
+    & > .e-button-icon {
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      width: var(--e-button-line-height);
-      height: var(--e-button-line-height);
+      height: var(--e-button-icon-h);
+      aspect-ratio: 1;
     }
-    &:has(.e-icon:first-child) {
-      padding-left: var(--e-button-pad-x-icon);
+    &:has(.e-button-icon:first-child) {
+      padding-left: var(--e-button-icon-px);
     }
-    &:has(.e-icon:last-child) {
-      padding-right: var(--e-button-pad-x-icon);
+    &:has(.e-button-icon:last-child) {
+      padding-right: var(--e-button-icon-px);
     }
   }
 }
