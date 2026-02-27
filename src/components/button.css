@@ -29,6 +29,7 @@
     gap: var(--e-button-gap);
     border-radius: 99em;
     position: relative;
+    isolation: isolate;
     text-decoration: none;
     white-space: pre;
     word-break: keep-all;
@@ -39,7 +40,11 @@
     color: var(--e-button-color);
     background: var(--e-button-background);
     border: var(--e-button-border, 0px);
-    /**/
+    /* hover */
+    &:hover {
+      filter: var(--e-button-hover-filter, brightness(var(--e-ui-brightness)));
+    }
+    /* Icon */
     & > .e-button-icon {
       display: flex;
       align-items: center;
