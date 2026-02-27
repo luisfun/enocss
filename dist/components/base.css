@@ -1,1 +1,1 @@
-@layer eno{:root{--e-size:1rem;--e-phi-half:1.272;--e-phi-inv:0.618;--e-phi-inv-2:0.382;&:has(.e-root){font-size:100%}}}
+@layer eno{:root{--e-size:1rem;--e-phi-2:2.618;--e-phi-1\.5:2.058;--e-phi-1:1.618;--e-phi-\.5:1.272;--e-component-h-1\.5:round(nearest,2.058em,2px);--e-component-h-2:round(nearest,2.618em,2px);&:has(.e-root){font-size:100%}}}

@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="ja">
+<head>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width,initial-scale=1" />
+	<title>enocss — Button preview</title>
+  <script type="module">
+    import '../src/eno.css';
+  </script>
+	<style>
+		.wrap{display:flex;flex-direction:column;gap:1rem;max-width:820px}
+		.row{display:flex;gap:1rem;flex-wrap:wrap;align-items:center;}
+		.panel{padding:1rem;border-radius:10px;}
+	</style>
+</head>
+<body class="e-root e-theme">
+	<div class="wrap">
+		<div class="panel">
+			<h1>Button コンポーネント確認</h1>
+			<p>このページは `src/components/button.css` の見た目確認用です。</p>
+		</div>
+
+		<div class="panel row">
+			<button>Default</button>
+			<button class="e-button"><span class="e-button-icon">#️⃣</span><div>計算</div></button>
+			<button class="e-button"><span class="e-button-icon">🔍</span><span>Search</span></button>
+			<button class="e-button"><span>Next</span><span class="e-button-icon">➜</span></button>
+			<button class="e-button-small"><span>Small</span><span class="e-button-icon">➜</span></button>
+			<button class="e-button-small" style="--e-size:.75rem"><span>Small.75</span><span class="e-button-icon">➜</span></button>
+			<button class="e-button e-theme-island" style="--e-size:.75rem"><span class="e-button-icon">🔍</span><span>XX0.75XX</span></button>
+			<button class="e-button e-theme-island" style="--e-size:15px"><span class="e-button-icon">🔍</span><span>XX15pxXX</span></button>
+			<button class="e-button e-theme-island" style="--e-size:16px"><span class="e-button-icon">🔍</span><span>XX16pxXX</span></button>
+			<button class="e-button e-theme-island" style="--e-size:17px"><span class="e-button-icon">🔍</span><span>XX17pxXX</span></button>
+			<button class="e-button e-theme-island" style="--e-size:1.25rem"><span class="e-button-icon">🔍</span><span>XX1.25XX</span></button>
+			<button class="e-button e-theme-island" style="--e-size:2rem"><span class="e-button-icon">🔍</span><span>XX2XX</span></button>
+			<button class="e-button-small e-theme-island" style="--e-size:2rem"><span class="e-button-icon">🔍</span><span>XX2XX</span></button>
+			<button class="e-button">Search</button>
+			<button class="e-button" style="font-size: 2rem">Search</button>
+		</div>
+
+		<div class="panel e-theme-island">
+			<h2 style="margin-top:0">アイコンだけのボタン</h2>
+			<div class="row">
+				<button class="e-button"><span class="e-button-icon">⭐</span></button>
+				<button class="e-button"><span class="e-button-icon">❤</span></button>
+			</div>
+		</div>
+
+    <div class="panel">
+			<h2 style="margin-top:0">確認ポイント</h2>
+			<ul>
+				<li>アイコンの左右パディングが期待通りか</li>
+				<li>サイズ変数 `--e-scale` で文字・アイコンが拡大縮小するか</li>
+				<li>テーマ変数(`--e-theme-*`)で背景／文字色／境界線が変わるか</li>
+			</ul>
+		</div>
+	</div>
+</body>
+</html>

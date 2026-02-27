@@ -5,6 +5,17 @@
   .e-button-small {
     --e-button-h: var(--e-component-h-1\.5);
   }
+  /* Center alignment. Consolidate based on support status. */
+  @supports (text-box-edge: cap) and (text-box-edge: alphabetic) {
+    .e-button, .e-button-small {
+      text-box: trim-both cap alphabetic;
+    }
+  }
+  @supports not ((text-box-edge: cap) and (text-box-edge: alphabetic)) {
+    .e-button, .e-button-small {
+      line-height: 1;
+    }
+  }
   .e-button, .e-button-small {
     --e-button-gap: calc(var(--e-button-icon-px) / var(--e-phi-1));
     --e-button-icon-px: calc((var(--e-button-h) - 1em) / 2);
@@ -23,7 +34,6 @@
     word-break: keep-all;
     overflow: hidden;
     font-weight: 500;
-    line-height: 1;
     /* Settings */
     font-size: var(--e-size);
     color: var(--e-button-color);
@@ -31,13 +41,13 @@
     border: var(--e-button-border, 0px);
     /**/
     & > .e-button-icon {
-      --e-button-icon-size: calc(var(--e-size) * var(--e-phi-\.5));
       display: flex;
       align-items: center;
       justify-content: center;
-      width: var(--e-button-icon-size);
-      height: var(--e-button-icon-size);
-      font-size: var(--e-button-icon-size);
+      line-height: 1;
+      width: 1em;
+      height: 1em;
+      font-size: calc(1em * var(--e-phi-\.5));
     }
     &:has(.e-button-icon:first-child) {
       padding-left: var(--e-button-icon-px);
