@@ -1,9 +1,9 @@
 @layer eno {
   .e-button {
-    --e-button-h: var(--e-component-h-2);
+    --e-button-h: var(--e-h-2);
   }
   .e-button-small {
-    --e-button-h: var(--e-component-h-1\.5);
+    --e-button-h: var(--e-h-1\.5);
   }
   /* Center alignment. Consolidate based on support status. */
   @supports (text-box-edge: cap) and (text-box-edge: alphabetic) {
@@ -42,7 +42,7 @@
     border: var(--e-button-border, 0px);
     /* hover */
     &:hover {
-      filter: var(--e-button-hover-filter, brightness(var(--e-ui-brightness)));
+      background: var(--e-button-hover-background, color-mix(in oklab, var(--e-button-background), var(--e-hover-mix) 5%));
     }
     /* Icon */
     & > .e-button-icon {

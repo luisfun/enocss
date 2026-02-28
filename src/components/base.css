@@ -6,24 +6,11 @@
     --e-phi-1\.5: 2.058;
     --e-phi-1: 1.618;
     --e-phi-\.5: 1.272;
-    --e-component-h-1\.5: round(nearest, calc(2.058 * 1em), 2px);
-    --e-component-h-2: round(nearest, calc(2.618 * 1em), 2px);
-    --e-ui-brightness: 0.9416; /*-0.125*/
+    --e-h-1\.5: round(nearest, calc(2.058 * 1em), 2px);
+    --e-h-2: round(nearest, calc(2.618 * 1em), 2px);
+    --e-hover-mix: light-dark(#000, #fff);
     &:has(.e-root) {
       font-size: 100%;
     }
-  }
-  @media (prefers-color-scheme: dark) {
-    :root {
-      --e-ui-brightness: 1.272;
-    }
-  }
-  :root:has(.e-root-light, #e-root-dummy) {
-    color-scheme: light;
-    --e-ui-brightness: 0.9416;
-  }
-  :root:has(.e-root-dark, #e-root-dummy) {
-    color-scheme: dark;
-    --e-ui-brightness: 1.272;
   }
 }
