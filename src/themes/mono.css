@@ -1,5 +1,5 @@
 @layer eno.theme {
-  .e-theme {
+  .e-theme-mono {
     --e-theme-text: light-dark(oklch(.1 0 0), oklch(.95 0 0));
     --e-theme-bg: light-dark(oklch(.9 0 0), oklch(.3 0 0));
     --e-theme-border: light-dark(oklch(0 0 0 / .1), oklch(1 0 0 / .1));
@@ -8,7 +8,7 @@
     background: light-dark(oklch(1 0 0), oklch(.2 0 0));
   }
 
-  .e-theme-island {
+  .e-theme-mono-island {
     --e-theme-bg: light-dark(oklch(.8 0 0), oklch(.4 0 0));
     --e-theme-border: light-dark(oklch(0 0 0 / .1), oklch(1 0 0 / .1));
     --e-button-background: light-dark(oklch(.8 0 0), oklch(.4 0 0));
@@ -16,7 +16,7 @@
     background: light-dark(oklch(.9 0 0), oklch(.3 0 0));
   }
 
-  :root:has(.e-theme, .e-theme-island) {
+  :root:has(.e-theme-mono, .e-theme-mono-island) {
     color-scheme: light dark;
   }
 }

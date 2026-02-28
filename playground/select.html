@@ -1,0 +1,128 @@
+<!doctype html>
+<html lang="ja">
+<head>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width,initial-scale=1" />
+	<title>enocss — Select preview</title>
+  <script type="module">
+	import '../src/eno.css';
+  </script>
+	<style>
+		.wrap{display:flex;flex-direction:column;gap:1rem;max-width:920px;padding:1rem}
+		.row{display:flex;gap:1rem;flex-wrap:wrap;align-items:center}
+		.panel{padding:1rem;border-radius:10px}
+		label{display:block;font-size:.9rem;margin-bottom:.25rem}
+		.field{display:flex;flex-direction:column;gap:.5rem;min-width:180px}
+		/* フォールバックの簡易スタイル（プロジェクトの eno.css を読み込んで確認してください） */
+		select{padding:.5rem .6rem;border-radius:8px;border:1px solid #d0d4d8;background:white}
+		select.small{padding:.3rem .5rem;font-size:.85rem;border-radius:6px}
+		select.large{padding:.8rem 1rem;font-size:1.1rem;border-radius:10px}
+		.wide{min-width:320px}
+	</style>
+</head>
+<body class="e-root e-theme-mono">
+	<div class="wrap">
+
+		<div class="panel">
+			<h1>Select コンポーネント確認</h1>
+			<p>このページは `select` の見た目と状態を確認するための検証ページです。</p>
+			<p>プロジェクトのスタイルを使うには `import '../src/eno.css'` の読み込みを確認してください。</p>
+		</div>
+
+		<div class="panel row">
+			<div class="field">
+				<label for="default">Default</label>
+				<select id="default">
+					<option>選択してください</option>
+					<option value="1">Option 1</option>
+					<option value="2">Option 2</option>
+					<option value="3">Option 3</option>
+				</select>
+			</div>
+
+			<div class="field">
+				<label for="with-placeholder">Placeholder (disabled option)</label>
+				<select id="with-placeholder">
+					<option value="" disabled selected hidden>Choose an option…</option>
+					<option>Apple</option>
+					<option>Banana</option>
+					<option>Cherry</option>
+				</select>
+			</div>
+
+			<div class="field">
+				<label for="small">Small</label>
+				<select id="small" class="small">
+					<option>XS</option>
+					<option>S</option>
+					<option>M</option>
+				</select>
+			</div>
+
+			<div class="field">
+				<label for="large">Large</label>
+				<select id="large" class="large">
+					<option>Large A</option>
+					<option>Large B</option>
+				</select>
+			</div>
+
+			<div class="field">
+				<label for="disabled">Disabled</label>
+				<select id="disabled" disabled>
+					<option>Disabled option</option>
+				</select>
+			</div>
+
+			<div class="field wide">
+				<label for="optgroup">Optgroup / 長いラベル</label>
+				<select id="optgroup">
+					<optgroup label="Fruits">
+						<option>Apple</option>
+						<option>Banana</option>
+					</optgroup>
+					<optgroup label="Vegetables">
+						<option>Carrot</option>
+						<option>Spinach</option>
+					</optgroup>
+				</select>
+			</div>
+
+		</div>
+
+		<div class="panel">
+			<h2 style="margin-top:0">Multiple / カスタム幅 / サイズ調整</h2>
+			<div class="row">
+				<div class="field">
+					<label for="multiple">Multiple</label>
+					<select id="multiple" multiple size="4">
+						<option>One</option>
+						<option>Two</option>
+						<option>Three</option>
+						<option>Four</option>
+						<option>Five</option>
+					</select>
+				</div>
+
+				<div class="field">
+					<label for="custom-size">CSS 変数でフォントサイズ調整</label>
+					<select id="custom-size" style="--e-size:18px;font-size:var(--e-size);">
+						<option>Small</option>
+						<option>Medium</option>
+						<option>Large</option>
+					</select>
+				</div>
+			</div>
+		</div>
+
+		<div class="panel">
+			<h2 style="margin-top:0">確認メモ</h2>
+			<ul>
+				<li>フォーカス・ホバー・無効表示・幅・高さの確認を行ってください。</li>
+				<li>プロジェクト側の `src/eno.css` を編集したらリロードして見た目を確認してください。</li>
+			</ul>
+		</div>
+
+	</div>
+</body>
+</html>

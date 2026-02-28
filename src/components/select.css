@@ -1,0 +1,19 @@
+@layer eno {
+  .e-select {
+    --e-select-h: var(--e-h-2);
+  }
+  .e-select-small {
+    --e-select-h: var(--e-h-1\.5);
+  }
+  /* Center alignment. Consolidate based on support status. */
+  @supports (text-box-edge: cap) and (text-box-edge: alphabetic) {
+    .e-select, .e-select-small {
+      text-box: trim-both cap alphabetic;
+    }
+  }
+  @supports not ((text-box-edge: cap) and (text-box-edge: alphabetic)) {
+    .e-select, .e-select-small {
+      line-height: 1;
+    }
+  }
+}
