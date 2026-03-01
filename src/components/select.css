@@ -16,4 +16,30 @@
       line-height: 1;
     }
   }
+  .e-select, .e-select-small {
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    justify-content: space-between;
+    vertical-align: middle;
+    height: var(--e-select-h);
+    padding: 0 calc(var(--e-select-h) / var(--e-phi-1\.5));
+    border-radius: 99em;
+    position: relative;
+    isolation: isolate;
+    text-decoration: none;
+    white-space: pre;
+    word-break: keep-all;
+    overflow: hidden;
+    font-weight: 500;
+    /* Settings */
+    font-size: var(--e-size);
+    color: var(--e-select-color);
+    background: var(--e-select-background);
+    border: var(--e-select-border, 0px);
+    /* hover */
+    &:hover {
+      background: var(--e-select-hover-background, color-mix(in oklab, var(--e-select-background), var(--e-hover-mix) 5%));
+    }
+  }
 }
