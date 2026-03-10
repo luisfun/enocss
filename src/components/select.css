@@ -1,22 +1,17 @@
 @layer eno {
-  .e-select {
-    --e-select-h: var(--e-h-2);
-  }
-  .e-select-small {
-    --e-select-h: var(--e-h-1\.5);
-  }
   /* Center alignment. Consolidate based on support status. */
   @supports (text-box-edge: cap) and (text-box-edge: alphabetic) {
-    .e-select, .e-select-small {
+    .e-select {
       text-box: trim-both cap alphabetic;
     }
   }
   @supports not ((text-box-edge: cap) and (text-box-edge: alphabetic)) {
-    .e-select, .e-select-small {
+    .e-select {
       line-height: 1;
     }
   }
-  .e-select, .e-select-small {
+  .e-select {
+    --e-select-h: var(--e-h-2);
     cursor: pointer;
     display: inline-flex;
     align-items: center;
@@ -41,5 +36,8 @@
     &:hover {
       background: var(--e-select-hover-background, color-mix(in oklab, var(--e-select-background), var(--e-hover-mix) 5%));
     }
+  }
+  .e-small {
+    --e-select-h: var(--e-h-1\.5);
   }
 }

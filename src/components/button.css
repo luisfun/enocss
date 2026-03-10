@@ -1,40 +1,23 @@
 @layer eno {
   .e-button {
     --e-button-h: var(--e-h-2);
-  }
-  .e-button-small {
-    --e-button-h: var(--e-h-1\.5);
-  }
-  /* Center alignment. Consolidate based on support status. */
-  @supports (text-box-edge: cap) and (text-box-edge: alphabetic) {
-    .e-button, .e-button-small {
-      text-box: trim-both cap alphabetic;
-    }
-  }
-  @supports not ((text-box-edge: cap) and (text-box-edge: alphabetic)) {
-    .e-button, .e-button-small {
-      line-height: 1;
-    }
-  }
-  .e-button, .e-button-small {
     --e-button-gap: calc(var(--e-button-icon-px) / var(--e-phi-1));
     --e-button-icon-px: calc((var(--e-button-h) - 1em) / 2);
     cursor: pointer;
+    /* Considering the possibility of arranging buttons side by side, adding inline */
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    vertical-align: middle;
     height: var(--e-button-h);
     padding: 0 calc(var(--e-button-h) / var(--e-phi-1\.5));
     gap: var(--e-button-gap);
     border-radius: 99em;
-    position: relative;
-    isolation: isolate;
-    text-decoration: none;
     white-space: pre;
     word-break: keep-all;
     overflow: hidden;
-    font-weight: 500;
+    text-box: trim-both cap alphabetic;
+    /* Remove when text-box is supported */
+    line-height: 1;
     /* Settings */
     font-size: var(--e-size);
     color: var(--e-button-color);
@@ -42,7 +25,7 @@
     border: var(--e-button-border, 0px);
     /* hover */
     &:hover {
-      background: var(--e-button-hover-background, color-mix(in oklab, var(--e-button-background), var(--e-hover-mix) 5%));
+      background: var(--e-button-hover-background, color-mix(in oklab, var(--e-button-background), var(--e-hover-mix)));
     }
     /* Icon */
     & > .e-button-icon {
@@ -60,5 +43,8 @@
     &:has(.e-button-icon:last-child) {
       padding-right: var(--e-button-icon-px);
     }
+  }
+  .e-small {
+    --e-button-h: var(--e-h-1\.5);
   }
 }

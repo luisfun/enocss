@@ -8,7 +8,7 @@
     --e-phi-\.5: 1.272;
     --e-h-1\.5: round(nearest, calc(2.058 * 1em), 2px);
     --e-h-2: round(nearest, calc(2.618 * 1em), 2px);
-    --e-hover-mix: light-dark(#000, #fff);
+    --e-hover-mix: light-dark(#000, #fff) 5%;
     &:has(.e-root) {
       font-size: 100%;
     }
